@@ -12,6 +12,7 @@ var currentWeatherEl = document.getElementById('currentWeather')
 var forecastEl = document.getElementById('forecast')
 cityForm.addEventListener('submit', function (e){
   e.preventDefault();
+  citySelect.innerHTML = ''
   var cityInput = document.getElementById('cityInput');
   city = cityInput.value
   var coordQueryURL = 'http://api.openweathermap.org/geo/1.0/direct?q='+ city + ',US&limit=5&appid=db85a3a35a6f624f305bc45759b9966e';
@@ -56,6 +57,15 @@ function saveCity(city, coord) {
     var savedCities = JSON.parse(localStorage.getItem('savedCities'))
   }
   savedCities.push({city, coord})
+  // need to modify here so I don't get duplicates
+  // function isDuplicate(city){
+  //   savedCities.push({city,coord})
+  // }
+  // if (savedCities.findIndex({city, coord})>-1){
+    // if (findIndex({city,coord}, index, savedCities)!=1) {
+    //   savedCities.push({city, coord})
+    // }
+
   localStorage.setItem('savedCities', JSON.stringify(savedCities))
   console.log(savedCities)
 }
