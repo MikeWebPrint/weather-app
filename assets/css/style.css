@@ -1,0 +1,9 @@
+#forecast {
+}
+
+.forecast {
+  background-color:darkblue;
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+}

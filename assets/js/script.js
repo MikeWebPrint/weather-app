@@ -103,7 +103,7 @@ function renderWeather(data){
     const forecastDate = forecastDay.getDate();
     const forecastYear = forecastDay.getFullYear();
     var forecastItem = document.createElement('div');
-    forecastItem.innerHTML = '<div>('+forecastMonth+'/'+forecastDate+'/'+forecastYear+') '+data.list[j].weather[0].description+'<img src="http://openweathermap.org/img/wn/'+data.list[j].weather[0].icon +'.png" alt="icon"></div>'+'<div>Temp: '+data.list[j].main.temp+'&deg; F</div><div>Wind: '+data.list[j].wind.speed+' MPH</div><div>Humidity: '+data.list[j].main.humidity+'%</div>';
+    forecastItem.innerHTML = '<div class="forecast col col-3"><div>('+forecastMonth+'/'+forecastDate+'/'+forecastYear+') '+data.list[j].weather[0].description+'<img src="http://openweathermap.org/img/wn/'+data.list[j].weather[0].icon +'.png" alt="icon"></div>'+'<div>Temp: '+data.list[j].main.temp+'&deg; F</div><div>Wind: '+data.list[j].wind.speed+' MPH</div><div>Humidity: '+data.list[j].main.humidity+'%</div></div>';
     console.log(forecastItem);
     // forecastEl.textContent = '';
     forecastEl.appendChild(forecastItem)
