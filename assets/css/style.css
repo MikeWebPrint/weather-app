@@ -1,9 +1,18 @@
 #forecast {
+  display: flex;
+flex-wrap: wrap;
+align-items: stretch;
+align-content: stretch;
 }
 
 .forecast {
-  background-color:darkblue;
+  background-color:#4760ff;
+  padding: .5rem;
+  margin: .5rem;
+  color: #ffffff;
+  flex: 1 1 auto;
+}
+#currentWeather > div{
   padding: 1rem;
-  margin: 1rem;
-  color: white;
+  margin-bottom: 1rem;
 }
