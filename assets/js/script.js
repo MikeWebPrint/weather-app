@@ -9,7 +9,7 @@ var currentWeatherEl = document.getElementById('currentWeather')
 cityForm.addEventListener('submit', function (e) {
   e.preventDefault();
   var cityInput = document.getElementById('cityInput');
-  city = cityInput.value;
+  city = cityInput.value.toUpperCase();
   saveCity(city)
   var coordQueryURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + ',US&limit=1&appid=db85a3a35a6f624f305bc45759b9966e';
   if (city.length > 0) {
@@ -53,31 +53,23 @@ function saveCity(city) {
   console.log(savedCities)
 }
 function getCities() {
-  var savedCities = localStorage.getItem('savedCities')
-  return savedCities
+  var savedCities = JSON.parse(localStorage.getItem('savedCities'))
+  createButtons(savedCities)
+  // return savedCities
 }
 
-function createButtons(data) {
-  for (i = 0; i < 1; i++) {
+function createButtons(savedCities) {
+  console.log('got saved cities')
+  for (i = 0; i < savedCities.length; i++) {
     var entry = document.createElement('button')
-    var name = data[i].name
-    var state = data[i].state;
-    var lat = data[i].lat;
-    var lon = data[i].lon;
+    var name = savedCities[i]
     entry.href = '';
     entry.setAttribute('class', 'btn btn-danger my-1')
-    entry.setAttribute('data-lat', lat)
-    entry.setAttribute('data-lon', lon)
-    entry.textContent = name + ', ' + state;
-    citySelect.appendChild(entry);
+    entry.textContent = name
+    cityButtons.appendChild(entry);
     cityInput.value = '';
     entry.addEventListener('click', function (e) {
       e.preventDefault();
-      console.log('You clicked ' + name + ', ' + state + ' - lat: ' + lat + ', lon: ' + lon)
-      var coord = { lat, lon }
-      saveCity(name, coord)
-      entry.remove();
-      cityButtons.appendChild(entry)
     })
   }
 }
@@ -105,12 +97,6 @@ function renderWeather(data){
     var forecastItem = document.createElement('div');
     forecastItem.innerHTML = '<div class="forecast col col-3"><div>('+forecastMonth+'/'+forecastDate+'/'+forecastYear+') '+data.list[j].weather[0].description+'<img src="http://openweathermap.org/img/wn/'+data.list[j].weather[0].icon +'.png" alt="icon"></div>'+'<div>Temp: '+data.list[j].main.temp+'&deg; F</div><div>Wind: '+data.list[j].wind.speed+' MPH</div><div>Humidity: '+data.list[j].main.humidity+'%</div></div>';
     console.log(forecastItem);
-    // forecastEl.textContent = '';
     forecastEl.appendChild(forecastItem)
   }
 }
-
-
-// <h4>('+currentMonth+'/'+currentDay+'/'+currentYear+')</h4>
-// currentWeatherEl.textContent = 'Well, current weather goes here, actually.'
-
