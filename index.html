@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App - 5 Day Forecast</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
+
 <body>
   <div class="container-fluid bg-dark">
     <header class="text-white text-center p-4 mb-3">
       <h1 class="">Domestic Weather Dashboard</h1>
     </header>
   </div>
-      <div class="container">
-            <div class="row">
-        <div class="col col-12 col-md-4">
-          <form action="" id="cityForm">
-            <label for="city">
-              Search by City, ST:
-            </label>
-            <input type="text" name="city" id="cityInput" placeholder="ex: New York, NY " required pattern="^[A-Za-z]+(\s[A-Za-z]+)?\s*,*\s*[A-Za-z]+(\s[A-Za-z]+)?\s*$">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12 col-md-3">
+        <form action="" id="cityForm">
+          <label for="city">
+            Search by City, ST:
+          </label>
+          <div class="d-flex align-items-center flex-wrap gap-2">
+            <input type="text" name="city" id="cityInput" placeholder="ex: New York, NY " required
+              pattern="^[A-Za-z]+(\s[A-Za-z]+)?\s*,*\s*[A-Za-z]+(\s[A-Za-z]+)?\s*$">
             <!-- regexr.com -->
-            <button type="submit" class="btn btn-sm btn-primary my-1">Search</button>
-            
-            </form>
-            <div id="cityButtons" class="d-flex flex-column py-3">
-            <!-- <span>Saved Cities:</span> -->
-            </div>
-        </div>
-        <div class="col col-12 col-md-8">
-          <h2 class="h4">Current Conditions</h2>
-          <div id="currentWeather">
+            <button type="submit" class="btn btn-sm btn-outline-primary my-1">Search</button>
           </div>
-          <h2 class="h5">Forecast</h2>
-          <div id="forecast" class="row-cols-md-2 card-group"></div>
+
+        </form>
+        <div id="cityButtons" class="d-flex flex-column py-3">
+          <!-- <span>Saved Cities:</span> -->
         </div>
-            </div>
       </div>
+      <div class="col col-12 col-md-9">
+        <h2 class="h4">Current Conditions</h2>
+        <div id="currentWeather">
+        </div>
+        <h2 class="h4">Forecast</h2>
+        <div id="forecast" class="row row-cols-1 row-cols-sm-3 row-cols-lg-4 row-cols-xl-5 g-3"></div>
+      </div>
+    </div>
+  </div>
   <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

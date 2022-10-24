@@ -120,8 +120,9 @@ function renderWeather(data){
     const forecastDate = forecastDay.getDate();
     const forecastYear = forecastDay.getFullYear();
     var forecastItem = document.createElement('div');
-    forecastItem.innerHTML = '<div class="forecast card"><div>'+forecastMonth+'/'+forecastDate+'/'+forecastYear+' <br/>'+data.list[j].weather[0].description+'<img src="http://openweathermap.org/img/wn/'+data.list[j].weather[0].icon +'.png" alt="icon"></div>'+'<div>Temp: '+data.list[j].main.temp+'&deg; F</div><div>Wind: '+data.list[j].wind.speed+' MPH</div><div>Humidity: '+data.list[j].main.humidity+'%</div></div>';
-    console.log(forecastItem);
+    forecastItem.setAttribute('class', 'col')
+    forecastItem.innerHTML = '<div class=" forecast card"><h5 class="card-header">'+forecastMonth+'/'+forecastDate+'/'+forecastYear+' </h5><div class="card-body"><img src="http://openweathermap.org/img/wn/'+data.list[j].weather[0].icon +'.png" alt="icon"><p>'+data.list[j].weather[0].description+'</p>'+'Temp: '+data.list[j].main.temp+'&deg; F<br/>Wind: '+data.list[j].wind.speed+' MPH<br/>Humidity: '+data.list[j].main.humidity+'%</div></div>';
+    // console.log(forecastItem);
     forecastEl.appendChild(forecastItem)
   }
 }
