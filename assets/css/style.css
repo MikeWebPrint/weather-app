@@ -1,20 +1,10 @@
 input{
   width: 10rem;
 }
-#forecast {
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* gap: 2px; */
-/* align-items: stretch; */
-/* align-content: stretch; */
-}
 
 .forecast {
   background-color:#4760ff;
-  /* padding: .5rem; */
-
   color: #ffffff;
-  /* flex: 1 0 20rem; */
 }
 
 #currentWeather > div{
