@@ -35,8 +35,8 @@ function fetchdata(coordQueryURL) {
         return response.json();
       })
       .then(function (data){
-        // console.log('weather data: for '+city);
-        // console.log(data);
+        console.log('weather data: for '+city);
+        console.log(data);
         renderWeather(data);
       })
     }

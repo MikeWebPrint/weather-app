@@ -8,10 +8,10 @@ This project offered me the opportunity to build an application using two APIs f
 
 
 ## Installation & Usage
-No installation is necessary to use this application, just visitint the URL and searching for a city.  I've set it up so that a user can enter just a city name, but to assure the correct city returns, the user can also include the two letter state in the search field (ex: Springfield, IL or Springfield, MA)
+No installation is necessary to use this application, just visiting the URL and searching for a city.  I've set it up so that a user can enter just a city name, but to assure the correct city returns, the user can also include the two letter state in the search field (ex: Springfield, IL or Springfield, MA). Note, the geocoding API accepts a state as input, but the weather API does not include the state in returned data, so I was not able to display the state in the Current Weather section. 
 
 
-I learned...
+I learned how to use fetch and then functions to request data, and then pass that data to another API before returning it to the application. I also learned how to use Bootstrap grid card layout.
 
 
 
@@ -32,5 +32,5 @@ I wrote the code for this project myself, of course with numerous Google searche
 
 ## Features
 
-This project is built in HTML, CSS, JS, and Photoshop (favicon), and uses Bootstrap, Openweatermap APIs, 
+This project is built in HTML, CSS, JS, and Photoshop (favicon), and uses Bootstrap, Openweathermap APIs, 
 
