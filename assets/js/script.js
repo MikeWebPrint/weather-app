@@ -23,7 +23,12 @@ cityForm.addEventListener('submit', function(e){
 function fetchdata(coordQueryURL) {
   fetch(coordQueryURL)
   .then(function (response) {
-    return response.json();
+    if (response.status ===200) {
+      return response.json();
+    } else {
+      currentWeatherEl.innerHTML = '<h3>Weather cannot be displayed at this time. Please try later.</h3>'
+      forecastEl.textContent = ''
+    }
   })
   .then(function (data) {
     for (i = 0; i < 1; i++) {
