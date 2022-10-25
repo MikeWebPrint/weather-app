@@ -24,6 +24,7 @@ function fetchdata(coordQueryURL) {
   fetch(coordQueryURL)
   .then(function (response) {
     if (response.status ===200) {
+      console.log(response);
       return response.json();
     } else {
       currentWeatherEl.innerHTML = '<h3>Weather cannot be displayed at this time. Please try later.</h3>'
@@ -107,7 +108,7 @@ function renderWeather(data){
   const currentYear = day.getFullYear();
   var item = document.createElement('div');
   item.setAttribute('class', 'card')
-  item.innerHTML = '<h2>'+data.city.name+' ('+currentMonth+'/'+currentDay+'/'+currentYear+')</h2><div>'+data.list[0].weather[0].description+'<img src="http://openweathermap.org/img/wn/'+data.list[0].weather[0].icon +'@2x.png" alt="icon"></div>'+'<div>Temp: '+data.list[0].main.temp+'&deg; F</div><div>Wind: '+data.list[0].wind.speed+' MPH</div><div>Humidity: '+data.list[0].main.humidity+'%</div>'
+  item.innerHTML = '<h2>'+data.city.name+' ('+currentMonth+'/'+currentDay+'/'+currentYear+')</h2><div>'+data.list[0].weather[0].description+'<img src="https://openweathermap.org/img/wn/'+data.list[0].weather[0].icon +'@2x.png" alt="icon"></div>'+'<div>Temp: '+data.list[0].main.temp+'&deg; F</div><div>Wind: '+data.list[0].wind.speed+' MPH</div><div>Humidity: '+data.list[0].main.humidity+'%</div>'
   // console.log(data.cod)
   currentWeatherEl.appendChild(item);
   // console.log('hello:' + data.list.length);
